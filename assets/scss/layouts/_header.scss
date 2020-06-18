@@ -1,0 +1,89 @@
+header {
+  // height: 44px;
+
+  display: flex;
+  flex-direction: column;
+
+  input[type='checkbox'] {
+    display: none;
+  }
+
+  input[type='checkbox']:checked ~ #menu {
+    visibility: visible;
+    height: auto;
+  }
+
+  input[type='checkbox']:checked + aside #menu-button {
+    &:hover span,
+    span {
+      background: transparent;
+    }
+
+    span {
+      &:before {
+        transform: rotate(45deg) translate(4px, 4px);
+        opacity: 1;
+      }
+      &:after {
+        transform: rotate(-45deg) translate(4px, -5px);
+      }
+    }
+  }
+
+  aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 16px;
+
+    img{
+      height: 24px;
+      width: 24px;
+    }
+
+    & > label {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #menu-button {
+      cursor: pointer;
+      span {
+        height: 2px;
+        width: 18px;
+        border-radius: 2px;
+        background-color: #060a24;
+        position: relative;
+        display: block;
+        transition: all 0.2s ease-in-out;
+        &:before {
+          top: -6px;
+          visibility: visible;
+        }
+        &:after {
+          top: 6px;
+        }
+        &:before,
+        &:after {
+          height: 2px;
+          width: 18px;
+          border-radius: 2px;
+          background-color: #060a24;
+          position: absolute;
+          content: '';
+          transition: all 0.2s ease-in-out;
+        }
+      }
+      &:hover span,
+      &:hover span:before,
+      &:hover span:after {
+        background: #333332;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+button {
+  font-family: IBMPlexMono-Medium;
+  font-size: 16px;
+  color: #060a24;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+  height: 48px;
+  border: 0;
+
+  &.btn-blue {
+    background: rgba(0, 243, 187, 1);
+    &:hover {
+      background: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+      color: white;
+    }
+  }
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+}

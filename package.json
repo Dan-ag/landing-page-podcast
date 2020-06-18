@@ -1,0 +1,15 @@
+{
+  "name": "project-1",
+  "version": "1.0.0",
+  "description": "``` base/ _reset.scss _typography.scss _color.scss components/ _buttons.scss _navigation.scss _gallery.scss layout/ _header.scss _grid.scss _sidebar.scss pages/ _home.scss _about.scss _contact.scss themes/ _theme.scss _admin.scss helpers/ (or utils/) _variables.scss _functions.scss _mixins.scss vendors/ _bootstrap.scss _jquery-ui.scss main.scss ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-styles": "sass assets/scss/styles.scss assets/css/styles.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.26.8"
+  }
+}
