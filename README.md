@@ -2,7 +2,7 @@
 
 - npm install
 
-### run 
+### run sass --watch
 
 -  npm run pre-styles
 
