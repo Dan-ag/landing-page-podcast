@@ -4,10 +4,7 @@
 
 ### run 
 
-- 
-
-
-
+-  npm run pre-styles
 
 ### Styles Structure ( The 7–1 Pattern )
 
