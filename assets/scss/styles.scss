@@ -1,30 +1,35 @@
+// helpers/ (or utils/)
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
 // base
+@import 'base/breakpoints';
 @import 'base/font';
 @import 'base/general';
 @import 'base/color';
-
-// helpers/ (or utils/)
-@import 'helpers/mixins';
+@import 'base/utils';
+@import 'base/grid';
 
 // components
 @import 'components/navigation';
 @import 'components/buttons';
+
 // layout
 @import 'layouts/header';
+@import 'layouts/footer';
+
 // pages
 
 // sections
-@import 'sections/episodios';
-@import 'sections/de-donde-venimos';
-@import 'sections/invitados-estelares';
-@import 'sections/algunos-de-nuestros-temas';
-@import 'sections/ultimas-novedades';
-
+@import 'sections/music';
+@import 'sections/did-you-know';
+@import 'sections/photos';
+@import 'sections/known-for';
+@import 'sections/last-news';
+@import 'sections/banner';
 
 // themes
 @import 'themes/theme';
-
-
 
 // vendors
 @import 'vendors/fontawesome/fontawesome';

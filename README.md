@@ -4,7 +4,7 @@
 
 ### run sass --watch
 
--  npm run pre-styles
+-  npm run scss-watch
 
 ### Styles Structure ( The 7–1 Pattern )
 

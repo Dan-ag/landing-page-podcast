@@ -1,45 +1,67 @@
 header {
-  // height: 44px;
-
   display: flex;
   flex-direction: column;
 
-  input[type='checkbox'] {
-    display: none;
-  }
+  // background: white;
+  // position: fixed;
+  width: 100%;
+  z-index: 20;
+  top: 0;
 
-  input[type='checkbox']:checked ~ #menu {
-    visibility: visible;
-    height: auto;
-  }
-
-  input[type='checkbox']:checked + aside #menu-button {
-    &:hover span,
-    span {
-      background: transparent;
-    }
-
-    span {
-      &:before {
-        transform: rotate(45deg) translate(4px, 4px);
-        opacity: 1;
-      }
-      &:after {
-        transform: rotate(-45deg) translate(4px, -5px);
-      }
+  .icon-group-main-menu {
+    position: relative;
+    .icon-close {
+      position: absolute;
+      display: none;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
   }
 
+  .bg-fixed {
+    height: 44px;
+    width: 100%;
+    background: #00f3bbd1;
+    position: fixed;
+    z-index: 19;
+    top: 0;
+    left: 0;
+
+    @include media-breakpoint-up(md) {
+      height: 73px;
+    }
+  }
+  .bg-absolute {
+    height: 44px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    z-index: 19;
+    top: 0;
+    left: 0;
+    @include media-breakpoint-up(md) {
+      height: 74px;
+    }
+  }
   aside {
+    position: fixed;
+    /* width: 100%; */
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     padding: 10px 16px;
 
-    img{
+    img {
       height: 24px;
-      width: 24px;
+      width: 60px;
     }
 
     & > label {
@@ -52,6 +74,11 @@ header {
     }
 
     #menu-button {
+      height: 15px;
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+
       cursor: pointer;
       span {
         height: 2px;
@@ -84,6 +111,54 @@ header {
       &:hover span:after {
         background: #333332;
       }
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
     }
+
+    &:target {
+      .icon-group-main-menu {
+        // &:hover span,
+        // span {
+        // }
+
+        .icon-close {
+          display: block;
+        }
+
+        span {
+          background: transparent !important;
+          &:before {
+            transform: rotate(45deg) translate(4px, 4px);
+            opacity: 1;
+          }
+          &:after {
+            transform: rotate(-45deg) translate(4px, -5px);
+          }
+        }
+      }
+
+      ~ nav {
+        visibility: visible;
+        height: auto;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      height: 53px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    @include padding-section($paddin-section-sm);
+  }
+
+  @include media-breakpoint-up(md) {
+    @include padding-section($paddin-section-md);
+    flex-direction: row;
+  }
+
+  @include media-breakpoint-up(xl) {
+    @include padding-section($paddin-section-lg);
   }
 }
