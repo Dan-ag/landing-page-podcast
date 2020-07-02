@@ -1022,9 +1022,6 @@ footer p {
     padding-right: 60px;
     margin-bottom: 0;
   }
-  #music .iframes-content.glutter {
-    margin: -36px;
-  }
   #music .iframes-content.glutter > * {
     flex-basis: calc((100% / 12) * 6 - 72px);
     margin: 36px;

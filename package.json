@@ -1,15 +1,28 @@
 {
-  "name": "project-1",
-  "version": "1.0.0",
+  "name": "favorite-artist",
+  "version": "2.0.0",
   "description": "``` base/ _reset.scss _typography.scss _color.scss components/ _buttons.scss _navigation.scss _gallery.scss layout/ _header.scss _grid.scss _sidebar.scss pages/ _home.scss _about.scss _contact.scss themes/ _theme.scss _admin.scss helpers/ (or utils/) _variables.scss _functions.scss _mixins.scss vendors/ _bootstrap.scss _jquery-ui.scss main.scss ```",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss-watch": "sass assets/scss/styles.scss styles/styles.css --watch"
+    "sass:watch": "sass scss/styles.scss styles/styles.css --watch",
+    "build:sass": "sass scss/styles.scss dist/styles/styles.css -s compressed --no-source-map",
+    "build:html": "cpx index.html dist",
+    "build:assets": "ncp assets dist/assets & ncp images dist/images",
+    "dev": "parallelshell 'npm run start -s' 'npm run sass:watch -s'",
+    "start": "browser-sync start --server --files='./*.html,./styles/*.css' --port 9090 --host 10.42.0.41 --no-open",
+    "start:prod": "browser-sync start --server 'dist' --files='./dist/*.html,./dist/styles/*.css' --port 9090 --host 10.42.0.41 --no-open",
+    "build": "npm run clean && npm run build:html && npm run build:sass &&  npm run build:assets"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "cpx": "^1.5.0",
+    "ncp": "^2.0.0",
+    "parallelshell": "github:darkguy2008/parallelshell",
+    "rimraf": "^3.0.2",
     "sass": "^1.26.8"
   }
 }
