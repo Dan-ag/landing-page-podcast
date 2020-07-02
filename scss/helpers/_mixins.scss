@@ -46,7 +46,7 @@
 
 @mixin glutter($margin, $numCol, $col) {
   &.glutter {
-    // margin: -#{$margin/2}px; // Genera glip en los navagadores
+    margin: -#{$margin/2}px; // Genera glip en los navagadores
     & > * {
       flex-basis: calc((100% / #{$numCol}) * #{$col} - #{$margin}px);
       margin: #{$margin/2}px;

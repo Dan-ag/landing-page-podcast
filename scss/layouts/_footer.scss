@@ -4,6 +4,7 @@ footer {
   .brand-icons {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     a {
       cursor: pointer;
