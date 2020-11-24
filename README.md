@@ -1,11 +1,20 @@
+## PodCast
+
+Landing page made with css and html
+
 ### Install
 
 - npm install
+### run
 
-### run sass --watch
+- npm run start:dev
 
--  npm run scss-watch
+### Build
 
+- npm run build
+### Test Build
+
+- npm run start:prod
 ### Styles Structure ( The 7–1 Pattern )
 
 ```

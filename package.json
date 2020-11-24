@@ -4,25 +4,26 @@
   "description": "``` base/ _reset.scss _typography.scss _color.scss components/ _buttons.scss _navigation.scss _gallery.scss layout/ _header.scss _grid.scss _sidebar.scss pages/ _home.scss _about.scss _contact.scss themes/ _theme.scss _admin.scss helpers/ (or utils/) _variables.scss _functions.scss _mixins.scss vendors/ _bootstrap.scss _jquery-ui.scss main.scss ```",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:watch": "sass scss/styles.scss styles/styles.css --watch",
+    "start:dev": "parallelshell 'npm run serve -s' 'npm run scss:watch -s'",
+    "start:prod": "browser-sync start --server 'dist' --files='./dist/*.html,./dist/styles/*.css' --port 9090 --no-open",
+    "build": "npm run clean && npm run build:html && npm run build:sass &&  npm run build:assets",
+    "serve": "browser-sync start --server --files='./*.html,./styles/*.css' --port 8080 --open",
+    "scss:watch": "sass scss/styles.scss styles/styles.css --watch",
     "build:sass": "sass scss/styles.scss dist/styles/styles.css -s compressed --no-source-map",
-    "build:html": "cpx index.html dist",
+    "build:html": "html-minifier --input-dir './' --output-dir dist --file-ext html --remove-comments --collapse-whitespace --minify-js true --minify-css false",
     "build:assets": "ncp assets dist/assets & ncp images dist/images",
-    "dev": "parallelshell 'npm run start -s' 'npm run sass:watch -s'",
-    "start": "browser-sync start --server --files='./*.html,./styles/*.css' --port 9090 --host 10.42.0.41 --no-open",
-    "start:prod": "browser-sync start --server 'dist' --files='./dist/*.html,./dist/styles/*.css' --port 9090 --host 10.42.0.41 --no-open",
-    "build": "npm run clean && npm run build:html && npm run build:sass &&  npm run build:assets"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "cpx": "^1.5.0",
-    "ncp": "^2.0.0",
     "parallelshell": "github:darkguy2008/parallelshell",
+    "browser-sync": "^2.26.7",
+    "html-minifier": "^4.0.0",
     "rimraf": "^3.0.2",
-    "sass": "^1.26.8"
-  }
+    "sass": "^1.26.8",
+    "ncp": "^2.0.0"
+  },
+  "dependencies": {}
 }

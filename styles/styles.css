@@ -917,6 +917,7 @@ footer {
 footer .brand-icons {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 footer .brand-icons a {
   cursor: pointer;
@@ -948,6 +949,7 @@ footer p {
 #music {
   padding: 70px 0px 130px;
   margin-bottom: -100px;
+  overflow: hidden;
 }
 #music:before {
   content: "";
@@ -1025,6 +1027,9 @@ footer p {
     padding-left: 60px;
     padding-right: 60px;
     margin-bottom: 0;
+  }
+  #music .iframes-content.glutter {
+    margin: -36px;
   }
   #music .iframes-content.glutter > * {
     flex-basis: calc((100% / 12) * 6 - 72px);
@@ -1200,7 +1205,7 @@ footer p {
   padding: 13px 0;
 }
 #known-for .category-group .category-img img {
-  width: 148px;
+  max-width: 148px;
   height: auto;
 }
 #known-for .category-group h2 {
@@ -7286,41 +7291,6 @@ readers do not read off random characters that represent icons */
   overflow: visible;
   position: static;
   width: auto;
-}
-
-/*!
- * Font Awesome Free 5.13.0 by @fontawesome - https://fontawesome.com
- * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- */
-@font-face {
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: url("../webfonts/fa-solid-900.eot");
-  src: url("../webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.woff") format("woff"), url("../webfonts/fa-solid-900.ttf") format("truetype"), url("../webfonts/fa-solid-900.svg#fontawesome") format("svg");
-}
-.fa,
-.fas {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-
-/*!
- * Font Awesome Free 5.13.0 by @fontawesome - https://fontawesome.com
- * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
- */
-@font-face {
-  font-family: "Font Awesome 5 Brands";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url("../webfonts/fa-brands-400.eot");
-  src: url("../webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.woff") format("woff"), url("../webfonts/fa-brands-400.ttf") format("truetype"), url("../webfonts/fa-brands-400.svg#fontawesome") format("svg");
-}
-.fab {
-  font-family: "Font Awesome 5 Brands";
-  font-weight: 400;
 }
 
 /*# sourceMappingURL=styles.css.map */
